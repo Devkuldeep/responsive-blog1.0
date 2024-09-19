@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,101 +13,202 @@
     <!-- custom css file link -->
     <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
 
-<!-- header section starts -->
-<header class="header">
-    <a href="#" class="logo"><span>Dev</span>Kuldeep</a>
-    <nav class="navbar">
-        <a href="#home">Home</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="icons">
-        <i class="fa-solid fa-bars" id="menu-bars"></i>
-        <i class="fas fa-search" id="search-icon"></i>
-    </div>
-    <form action="" class="search-form">
-        <input type="search" placeholder="search here..." id="search-box">
-        <label for="search-box" class="fas fa-search"></label>
-    </form>
-</header>
-<!-- header section ends -->
-
-<!-- banner section starts -->
-<section class="banner" id="home">
-    <div class="content">
-        <h3>Welcome to My Blog</h3>
-        <p>Discover insights, tutorials, and tips on web development, programming, and software development. </p>
-        <a href="#blog" class="btn">Explore My Blogs</a>
-    </div>
-</section>
-<!-- banner section ends -->
-
-<!-- posts section starts -->
-<section class="container" id="blog">
-    <div class="posts-container">
-        <% posts.forEach(post => { %>
-        <div class="post">
-            <img src="<%= post.image %>" alt="<%= post.title %>" class="image">
-            <div class="date">
-                <i class="far fa-clock"></i>
-                <span><%= post.date %></span>
-            </div>
-            <h3 class="title"><%= post.title %></h3>
-            <p class="text clamped"><%= post.excerpt %></p>
-            <a href="/post/<%= post.id %>" class="read-more">Read More</a>
-            <div class="links">
-                <a href="#" class="user">
-                    <i class="far fa-user"></i>
-                    <span>by <%= post.author %></span>
-                </a>
-                <a href="#" class="icon">
-                    <i class="far fa-comment"></i>
-                    <span>(<%= post.comments %>)</span>
-                </a>
-                <a href="#" class="icon">
-                    <i class="far fa-share-square"></i>
-                    <span>(<%= post.shares %>)</span>
-                </a>
-            </div>
+    <!-- header section starts -->
+    <header class="header">
+        <a href="#" class="logo"><span>Dev</span>Kuldeep</a>
+        <nav class="navbar">
+            <a href="#home">Home</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="icons">
+            <i class="fa-solid fa-bars" id="menu-bars"></i>
+            <i class="fas fa-search" id="search-icon"></i>
         </div>
-        <% }) %>
-    </div>
+        <form action="" class="search-form">
+            <input type="search" placeholder="search here..." id="search-box">
+            <label for="search-box" class="fas fa-search"></label>
+        </form>
+    </header>
+    <!-- header section ends -->
 
-    <div class="sidebar">
-        <!-- About Me Section -->
-        <div class="box">
-            <h3 class="title">About Me</h3>
-            <div class="about">
-                <img src="images/user.jpg" alt="Profile Picture">
-                <h3>Kuldeep Patel</h3>
-                <p>Hello! I'm Kuldeep Patel, an MCA student with a passion for web development, coding, and software engineering.</p>
-                <div class="follow">
-                    <a href="https://github.com/devkuldeep" class="fab fa-github" target="_blank"></a>
-                    <a href="https://www.linkedin.com/in/kuldeep-patel-09a0041a7/" class="fab fa-linkedin" target="_blank"></a>
-                    <a href="https://x.com/KuldeepDev_" class="fa-brands fa-x-twitter" target="_blank"></a>
-                    <a href="https://kuldeepdev.vercel.app/" class="fa-brands fa-chrome" target="_blank"></a>
+    <!-- banner section starts -->
+    <section class="banner" id="home">
+        <div class="content">
+            <h3>Welcome to My Blog</h3>
+            <p>Discover insights, tutorials, and tips on web development, programming, and software development. </p>
+            <a href="#blog" class="btn">Explore My Blogs</a>
+        </div>
+    </section>
+    <!-- banner section ends -->
+
+    <!-- posts section starts -->
+    <section class="container" id="blog">
+        <div class="posts-container">
+            <% posts.forEach(post=> { %>
+                <div class="post">
+                    <img src="<%= post.image %>" alt="<%= post.title %>" class="image">
+                    <div class="date">
+                        <i class="far fa-clock"></i>
+                        <span>
+                            <%= post.date %>
+                        </span>
+                    </div>
+                    <h3 class="title">
+                        <%= post.title %>
+                    </h3>
+                    <p class="text clamped">
+                        <%= post.excerpt %>
+                    </p>
+                    <a href="/post/<%= post.id %>" class="read-more">Read More</a>
+                    <div class="links">
+                        <a href="#" class="user">
+                            <i class="far fa-user"></i>
+                            <span>by <%= post.author %></span>
+                        </a>
+                        <a href="#" class="icon">
+                            <i class="far fa-comment"></i>
+                            <span>(<%= post.comments %>)</span>
+                        </a>
+                        <a href="#" class="icon">
+                            <i class="far fa-share-square"></i>
+                            <span>(<%= post.shares %>)</span>
+                        </a>
+                    </div>
                 </div>
-            </div>
+                <% }) %>
         </div>
 
-        <!-- Categories and Popular Posts remain unchanged -->
-    </div>
-</section>
-<!-- posts section ends -->
+     <div class="sidebar">
+            <!-- About Me Section -->
+            <div class="box">
+                <h3 class="title">About Me</h3>
+                <div class="about">
+                    <img src="images/user.jpg" alt="Profile Picture">
+                    <h3>Kuldeep Patel</h3>
+                    <p>Hello! I'm Kuldeep Patel, an MCA student with a passion for web development, coding, and software
+                        engineering.</p>
+                    <div class="follow">
+                        <a href="https://github.com/devkuldeep" class="fab fa-github" target="_blank"></a>
+                        <a href="https://www.linkedin.com/in/kuldeep-patel-09a0041a7/" class="fab fa-linkedin"
+                            target="_blank"></a>
+                        <a href="https://x.com/KuldeepDev_" class="fa-brands fa-x-twitter" target="_blank"></a>
+                        <a href="https://kuldeepdev.vercel.app/" class="fa-brands fa-chrome" target="_blank"></a>
+                    </div>
+                </div>
 
-<!-- Footer Section -->
-<section class="footer">
-    <div class="follow">
-        <a href="https://github.com/devkuldeep" class="fab fa-github" target="_blank"></a>
-        <a href="https://www.linkedin.com/in/kuldeep-patel-09a0041a7/" class="fab fa-linkedin" target="_blank"></a>
-        <a href="https://x.com/KuldeepDev_" class="fa-brands fa-x-twitter" target="_blank"></a>
-        <a href="https://kuldeepdev.vercel.app/" class="fa-brands fa-chrome" target="_blank"></a>
-    </div>
-    <div class="credit">Developed by <span>Kuldeep Dev</span> | ❤️</div>
-</section>
+                <div class="box">
+                    <h3 class="title">categories</h3>
+                    <div class="category">
+                        <a href="#">Web Development <span>20</span></a>
+                        <a href="#">Coding <span>35</span></a>
+                        <a href="#">Software Engineering <span>18</span></a>
+                        <a href="#">AI & Machine Learning <span>25</span></a>
+                        <a href="#">Programming Tutorials <span>40</span></a>
+                        <a href="#">Technology Trends <span>22</span></a>
+                        <a href="#">Project Showcases <span>15</span></a>
+                        <a href="#">Career in Tech <span>12</span></a>
+                        <a href="#">Web3 & Blockchain <span>28</span></a>
+                        <a href="#">Portfolio Building <span>30</span></a>
+                    </div>
 
-<script src="/js/script.js"></script>
+
+                </div>
+
+                <div class="box">
+                    <h3 class="title">popular posts</h3>
+                    <div class="p-post">
+                        <a href="#">
+                            <h3>01. Exploring the Future of Web Development</h3>
+                            <span><i class="far fa-clock"></i>15th September, 2024</span>
+                        </a>
+                        <a href="#">
+                            <h3>02. A Beginner's Guide to JavaScript Frameworks</h3>
+                            <span><i class="far fa-clock"></i>10th September, 2024</span>
+                        </a>
+                        <a href="#">
+                            <h3>03. Understanding Blockchain Technology and Web3</h3>
+                            <span><i class="far fa-clock"></i>5th September, 2024</span>
+                        </a>
+                        <a href="#">
+                            <h3>04. Tips for Building a Successful Tech Portfolio</h3>
+                            <span><i class="far fa-clock"></i>1st September, 2024</span>
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="box">
+                    <h3 class="title">Popular Tags</h3>
+                    <div class="tags">
+                        <a href="#">Web Development</a>
+                        <a href="#">Coding</a>
+                        <a href="#">AI</a>
+                        <a href="#">Machine Learning</a>
+                        <a href="#">Software Engineering</a>
+                        <a href="#">JavaScript</a>
+                        <a href="#">Blockchain</a>
+                        <a href="#">Web3</a>
+                        <a href="#">Tech Trends</a>
+                        <a href="#">Programming Tips</a>
+                        <a href="#">Portfolio Building</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+    </section>
+    </div>
+    </section>
+    <!-- posts section ends -->
+
+
+
+    </div>
+
+    </section>
+
+
+    <!-- contact section starts  -->
+
+    <section class="contact" id="contact">
+
+        <form action="">
+            <h3>contact me</h3>
+            <div class="inputBox">
+                <input type="text" placeholder="full name">
+                <input type="email" placeholder="email">
+            </div>
+            <div class="inputBox">
+                <input type="mobile number" placeholder="number">
+                <input type="text" placeholder="subject..">
+            </div>
+            <textarea name="" placeholder="message...." id="" cols="30" rows="10"></textarea>
+            <input type="submit" value="send message" class="btn">
+        </form>
+
+    </section>
+
+    <!-- contact section ends -->
+
+
+    <!-- Footer Section -->
+    <section class="footer">
+        <div class="follow">
+            <a href="https://github.com/devkuldeep" class="fab fa-github" target="_blank"></a>
+            <a href="https://www.linkedin.com/in/kuldeep-patel-09a0041a7/" class="fab fa-linkedin" target="_blank"></a>
+            <a href="https://x.com/KuldeepDev_" class="fa-brands fa-x-twitter" target="_blank"></a>
+            <a href="https://kuldeepdev.vercel.app/" class="fa-brands fa-chrome" target="_blank"></a>
+        </div>
+        <div class="credit">Developed by <span>Kuldeep Dev</span> | ❤️</div>
+    </section>
+
+    <script src="/js/script.js"></script>
 </body>
+
 </html>

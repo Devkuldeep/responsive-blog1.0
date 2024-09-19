@@ -4,9 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= post.title %></title>
+     <!-- font awesome cdn link -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+     <!-- custom css file link -->
     <link rel="stylesheet" href="/css/post.css">
+
 </head>
 <body>
+
+<header class="header">
+    <a href="/" class="logo"><span>Dev</span>Kuldeep</a>
+    <nav class="navbar">
+        <a href="/">Home</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
 <section class="container">
     <div class="post">
@@ -17,22 +30,46 @@
         </div>
         <h3 class="title"><%= post.title %></h3>
         <p class="text"><%= post.content %></p>
-        <div class="links">
-            <a href="#" class="user">
-                <i class="far fa-user"></i>
-                <span>by <%= post.author %></span>
-            </a>
-            <a href="#" class="icon">
-                <i class="far fa-comment"></i>
-                <span>(<%= post.comments %>)</span>
-            </a>
-            <a href="#" class="icon">
-                <i class="far fa-share-square"></i>
-                <span>(<%= post.shares %>)</span>
-            </a>
+
+        <div class="post-navigation">
+            <% if (previousPost) { %>
+                <a href="/post/<%= previousPost.id %>" class="prev-post">← Previous Post: <%= previousPost.title %></a>
+            <% } %>
+            <% if (nextPost) { %>
+                <a href="/post/<%= nextPost.id %>" class="next-post">Next Post: <%= nextPost.title %> →</a>
+            <% } %>
+        </div>
+
+        <a href="/#blog" class="btn go-back">Go Back to Blog List</a>
+
+        <div class="related-posts">
+            <h3>Related Posts</h3>
+            <div class="posts-container">
+                <% relatedPosts.forEach(relatedPost => { %>
+                <div class="post">
+                    <a href="/post/<%= relatedPost.id %>">
+                        <h4><%= relatedPost.title %></h4>
+                    </a>
+                </div>
+                <% }) %>
+            </div>
         </div>
     </div>
+
+
+    
 </section>
 
+<section class="footer">
+    <div class="follow">
+        <a href="https://github.com/devkuldeep" class="fab fa-github" target="_blank"></a>
+        <a href="https://www.linkedin.com/in/kuldeep-patel-09a0041a7/" class="fab fa-linkedin" target="_blank"></a>
+        <a href="https://x.com/KuldeepDev_" class="fa-brands fa-x-twitter" target="_blank"></a>
+        <a href="https://kuldeepdev.vercel.app/" class="fa-brands fa-chrome" target="_blank"></a>
+    </div>
+    <div class="credit">Developed by <span>Kuldeep Dev | ❤️</span></div>
+</section>
+
+<!--  -->
 </body>
 </html>

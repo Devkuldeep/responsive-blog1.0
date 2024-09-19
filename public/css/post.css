@@ -6,16 +6,14 @@
     --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
 }
 
-* {
-    margin: 0;
-    padding: 0;
+*{
+    margin:0; padding:0;
     box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
+    font-weight: lighter;
+    
 }
 
 body {
@@ -23,17 +21,102 @@ body {
     line-height: 1.7;
     font-size: 1.6rem;
 }
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;     
+}
+
+section{
+    padding:2rem 7%;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    background:var(--black);
+    color:#fff;
+    border-radius: .5rem;
+    padding:.9rem 3rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+.btn:hover{
+    background:var(--orange);
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right:0;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    padding:1.2rem 7%;
+
+}
+
+.header .logo{
+    color:var(--black);
+    font-size: 2.5rem;
+    margin-right: auto;
+}
+
+.header .logo span{
+    color:var(--orange);
+}
+
+.header .navbar a{
+    color:var(--light-color);
+    margin-right: 2rem;
+    font-size: 1.7rem;
+    text-transform: capitalize;
+}
+
+.header .navbar a:hover{
+    color:var(--orange);
+}
+
+.header .icons i{
+    height:4.5rem;
+    line-height:4.5rem;
+    width:4.5rem;
+    text-align: center;
+    color:var(--black);
+    background:#eee;
+    border-radius: 50%;
+    margin-left: .7rem;
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.header .icons i:hover{
+    color:#fff;
+    background:var(--orange);
+}
+
+
+
+
+
+
 
 .container {
+    width: 100%;
     padding: 2rem 7%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     background: #eee;
 }
 
 .post {
-    width: 70%;
+    margin: auto;
+    width: 90%;
     padding: 2rem;
     background: #fff;
     border: var(--border);
@@ -107,6 +190,137 @@ body {
     margin-right: auto;
 }
 
+
+
+
+
+
+
+
+/* Go Back Button */
+.go-back {
+    display: block;
+    margin-top: 20px;
+    font-size: 1.6rem;
+    color: var(--black);
+    font-weight: bolder;
+    text-decoration: none;
+    background-color: var(--orange);
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.go-back:hover {
+    background-color: var(--black);
+    color: #fff;
+}
+
+/* Previous and Next Post Links */
+.post-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.prev-post, .next-post {
+    font-size: 1.5rem;
+    color: var(--orange);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.prev-post:hover, .next-post:hover {
+    color: var(--black);
+}
+
+/* Related Posts Section */
+.related-posts {
+    margin-top: 40px;
+}
+
+.related-posts h3 {
+    font-size: 2.5rem;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+}
+
+.related-posts .posts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.related-posts .post {
+    background: #fff;
+    border: var(--border);
+    border-radius: .5rem;
+    padding: 1rem;
+    box-shadow: var(--box-shadow);
+}
+
+.related-posts .post h4 {
+    font-size: 1.8rem;
+    color: var(--black);
+    margin-bottom: .5rem;
+}
+
+.related-posts .post p {
+    color: var(--light-color);
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+
+
+
+
+/* Footer styles */
+
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer .credit{
+    text-transform: capitalize;
+    font-size: 2rem;
+    color:var(--black);
+    padding: 1rem 0;
+}
+
+.footer .credit span{
+    color:var(--orange);
+}
+
+.footer .follow{
+    padding: 1rem 0;
+}
+
+.footer .follow a{
+    height:4.5rem;
+    line-height:4.5rem;
+    width:4.5rem;
+    border-radius: 50%;
+    font-size: 1.7rem;
+    background:var(--black);
+    color:#fff;
+    margin:0 .1rem;
+    text-align: center;
+}
+
+.footer .follow a:hover{
+    background:var(--orange);
+}
+
+
+
+
+
 /* Media Queries */
 @media (max-width: 768px) {
     .container {
@@ -128,6 +342,7 @@ body {
     .text {
         font-size: 1.5rem;
     }
+
 }
 
 @media (max-width: 450px) {
@@ -137,5 +352,9 @@ body {
 
     .links a {
         font-size: 1.4rem;
+    }
+
+    .footer{
+        flex-flow: column;
     }
 }
