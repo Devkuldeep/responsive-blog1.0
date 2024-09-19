@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Blog Website</title>
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- header section starts -->
+<header class="header">
+    <a href="#" class="logo"><span>Dev</span>Kuldeep</a>
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="icons">
+        <i class="fa-solid fa-bars" id="menu-bars"></i>
+        <i class="fas fa-search" id="search-icon"></i>
+    </div>
+    <form action="" class="search-form">
+        <input type="search" placeholder="search here..." id="search-box">
+        <label for="search-box" class="fas fa-search"></label>
+    </form>
+</header>
+<!-- header section ends -->
+
+<!-- banner section starts -->
+<section class="banner" id="home">
+    <div class="content">
+        <h3>Welcome to My Blog</h3>
+        <p>Discover insights, tutorials, and tips on web development, programming, and software development. </p>
+        <a href="#blog" class="btn">Explore My Blogs</a>
+    </div>
+</section>
+<!-- banner section ends -->
+
+<!-- posts section starts -->
+<section class="container" id="blog">
+    <div class="posts-container">
+        <% posts.forEach(post => { %>
+        <div class="post">
+            <img src="<%= post.image %>" alt="<%= post.title %>" class="image">
+            <div class="date">
+                <i class="far fa-clock"></i>
+                <span><%= post.date %></span>
+            </div>
+            <h3 class="title"><%= post.title %></h3>
+            <p class="text clamped"><%= post.excerpt %></p>
+            <a href="/post/<%= post.id %>" class="read-more">Read More</a>
+            <div class="links">
+                <a href="#" class="user">
+                    <i class="far fa-user"></i>
+                    <span>by <%= post.author %></span>
+                </a>
+                <a href="#" class="icon">
+                    <i class="far fa-comment"></i>
+                    <span>(<%= post.comments %>)</span>
+                </a>
+                <a href="#" class="icon">
+                    <i class="far fa-share-square"></i>
+                    <span>(<%= post.shares %>)</span>
+                </a>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+
+    <div class="sidebar">
+        <!-- About Me Section -->
+        <div class="box">
+            <h3 class="title">About Me</h3>
+            <div class="about">
+                <img src="images/user.jpg" alt="Profile Picture">
+                <h3>Kuldeep Patel</h3>
+                <p>Hello! I'm Kuldeep Patel, an MCA student with a passion for web development, coding, and software engineering.</p>
+                <div class="follow">
+                    <a href="https://github.com/devkuldeep" class="fab fa-github" target="_blank"></a>
+                    <a href="https://www.linkedin.com/in/kuldeep-patel-09a0041a7/" class="fab fa-linkedin" target="_blank"></a>
+                    <a href="https://x.com/KuldeepDev_" class="fa-brands fa-x-twitter" target="_blank"></a>
+                    <a href="https://kuldeepdev.vercel.app/" class="fa-brands fa-chrome" target="_blank"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories and Popular Posts remain unchanged -->
+    </div>
+</section>
+<!-- posts section ends -->
+
+<!-- Footer Section -->
+<section class="footer">
+    <div class="follow">
+        <a href="https://github.com/devkuldeep" class="fab fa-github" target="_blank"></a>
+        <a href="https://www.linkedin.com/in/kuldeep-patel-09a0041a7/" class="fab fa-linkedin" target="_blank"></a>
+        <a href="https://x.com/KuldeepDev_" class="fa-brands fa-x-twitter" target="_blank"></a>
+        <a href="https://kuldeepdev.vercel.app/" class="fa-brands fa-chrome" target="_blank"></a>
+    </div>
+    <div class="credit">Developed by <span>Kuldeep Dev</span> | ❤️</div>
+</section>
+
+<script src="/js/script.js"></script>
+</body>
+</html>

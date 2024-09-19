@@ -1,0 +1,141 @@
+:root {
+    --orange: #e67e22;
+    --black: #333;
+    --light-color: #777;
+    --border: .1rem solid rgba(0, 0, 0, .2);
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f2f2f2;
+    line-height: 1.7;
+    font-size: 1.6rem;
+}
+
+.container {
+    padding: 2rem 7%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: #eee;
+}
+
+.post {
+    width: 70%;
+    padding: 2rem;
+    background: #fff;
+    border: var(--border);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.image {
+    width: 100%;
+    height: 40rem;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+
+.date {
+    margin-top: 1.5rem;
+    color: var(--orange);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.date i {
+    margin-right: .5rem;
+}
+
+.title {
+    margin-top: 1.5rem;
+    font-size: 3rem;
+    color: var(--black);
+    text-transform: capitalize;
+}
+
+.text {
+    margin-top: 1.5rem;
+    color: var(--light-color);
+    font-size: 1.7rem;
+    line-height: 1.7;
+}
+
+.links {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    border-top: var(--border);
+    padding-top: 1.5rem;
+}
+
+.links a {
+    margin-right: 2rem;
+    font-size: 1.6rem;
+    color: var(--light-color);
+    display: flex;
+    align-items: center;
+}
+
+.links a i {
+    margin-right: .5rem;
+    color: var(--black);
+}
+
+.links a:hover {
+    color: var(--orange);
+}
+
+.links a:hover i {
+    color: var(--orange);
+}
+
+.links .user {
+    margin-right: auto;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem;
+    }
+
+    .post {
+        width: 100%;
+    }
+
+    .image {
+        height: 30rem;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .text {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .links a {
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,14 @@
+[
+    {
+      "id": 1,
+      "image": "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg",
+      "date": "15th September, 2024",
+      "title": "How to Master Modern JavaScript",
+      "excerpt": "JavaScript is an essential tool for web development, but mastering it can be challenging. In this post, we dive into advanced JavaScript concepts.",
+      "content": "JavaScript is an essential tool for web development, but mastering it can be challenging. In this post, we dive into advanced JavaScript concepts, including closures, async/await, and the latest ES features. Learn how to write cleaner, more efficient code and improve your skills in modern JavaScript.\n\nWhether you're building interactive websites or developing complex applications, understanding these concepts will significantly enhance your programming capabilities. Explore practical examples and tips to apply these techniques in your projects.",
+      "author": "Kuldeep Dev",
+      "comments": 120,
+      "shares": 75
+    }
+  ]
+  

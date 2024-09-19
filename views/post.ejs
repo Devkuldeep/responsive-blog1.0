@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= post.title %></title>
+    <link rel="stylesheet" href="/css/post.css">
+</head>
+<body>
+
+<section class="container">
+    <div class="post">
+        <img src="<%= post.image %>" alt="<%= post.title %>" class="image">
+        <div class="date">
+            <i class="far fa-clock"></i>
+            <span><%= post.date %></span>
+        </div>
+        <h3 class="title"><%= post.title %></h3>
+        <p class="text"><%= post.content %></p>
+        <div class="links">
+            <a href="#" class="user">
+                <i class="far fa-user"></i>
+                <span>by <%= post.author %></span>
+            </a>
+            <a href="#" class="icon">
+                <i class="far fa-comment"></i>
+                <span>(<%= post.comments %>)</span>
+            </a>
+            <a href="#" class="icon">
+                <i class="far fa-share-square"></i>
+                <span>(<%= post.shares %>)</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
